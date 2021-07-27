@@ -46,7 +46,13 @@ public class CreditCard {
 
     private boolean isValidLengthRange(String argCcNumber){
         
-        if ( (argCcNumber.length() < 13) || (argCcNumber.length() == 14) || (argCcNumber.length() > 16) ) 
+        final int VISA_SMALLEST_LENGTH = 13;
+        final int INVALID_LENGTH = 14;
+        final int D_M_V_HIGHEST_LENGTH = 16;
+        
+        
+        
+        if ( (argCcNumber.length() < VISA_SMALLEST_LENGTH) || (argCcNumber.length() == INVALID_LENGTH) || (argCcNumber.length() > D_M_V_HIGHEST_LENGTH) ) 
 
             return false;
         else
