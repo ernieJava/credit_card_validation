@@ -34,6 +34,8 @@ public class CreditCard {
     
     private String constructorError = null;
 
+    private String error = null;
+
 
 
 
@@ -43,6 +45,12 @@ public class CreditCard {
 
 
     
+
+    public String getError() {
+        return error;
+    }
+
+
 
     private boolean isValidLengthRange(String argCcNumber){
         
@@ -136,7 +144,7 @@ public class CreditCard {
 
     
    public boolean isLuhnValidated(String argCcNumber){
-       
+    try{
         numberLength = argCcNumber.length();
         
         boolean isSkipped = false;
@@ -159,6 +167,9 @@ public class CreditCard {
         }
         
         isLuhnValid = (sum % 10 == 0);
+    } catch (Exception e) {
+        error = "Error in isLuhnValidated method!";
+      }
         
             
     return isLuhnValid;
@@ -234,12 +245,6 @@ public class CreditCard {
     }
 
 
-    
- //   public boolean isValidCC(){
-    
- //       return isValidCC(this.ccNumber);
-    
- //   }
 
     public int getNumberLength() {
         return numberLength;
