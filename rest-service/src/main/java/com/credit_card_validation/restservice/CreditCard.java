@@ -7,7 +7,19 @@ package com.credit_card_validation.restservice;
  * version 1.0 
  * 26-07-21
  * 
+   The Java class CreditCard, and its derived (& contained) classes CreditCardAmex, CreditCardDiscover, CreditCardMasterCard, and CreditCardVisa, serve to validate credit card numbers.
+   The CreditCard object’s member variable isValidCreditCard is set to true ONLY if all the following checks pass: 
+1	If the non-default constructor of CreditCard is called at instantiation time, and the constructor’s argument, argCcNumber, is both NOT of out-of-range in length and does NOT contain any non-numerical character(s).
+2	If the method isValidCC is called after instantiating CreditCard with its default constructor, and the isValidCC’s argument, argCcNumber, is both NOT of out-of-range in length and does NOT contain any non-numerical character(s).
+3	If the credit card number starts with the correct starting digit(s); as each of the four (Amex, Discover, Visa, Mastercard) credit cards’ numbers, are unique in their starting digit(s).  The starting digit(s) must satisfy at least one of the four card types.
+4	If the length of the cc number is correct, matching the card type in focus, and matching the starting digits of the same type of card in focus; as each of the four (Amex, Discover, Visa, Mastercard) credit cards’ numbers, are unique in their length sizes (except Visa).  
+5	If the credit card passes the Luhn algorithm check.
  * 
+ *  Further, if all the checks pass, the value of CreditCard’s public member variable ccType will store the credit card type such as “Mastercard”.
+    CreditCard’s services, can be used in one of two ways: 
+1	Instantiating the object with the constructor public CreditCard(String argCcNumber). Then just invoke its member variables’ values to see the results. 
+2	Calling CreditCard’s method public boolean isValidCC(String argCcNumber) after instantiating CreditCard with the default constructor. Then just invoke its member variables’ values to see the results. 
+
  */
 
 public class CreditCard {
