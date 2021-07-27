@@ -165,7 +165,7 @@ public class CreditCard {
 
         for (int x = numberLength - 1; x >= 0; x--) // parse each digit of the original String representing the credit card number from right to left
         {
-            int digit = argCcNumber.charAt(x) - '0'; // d represents the original digit, at each iteration, that is being parsed from right to left
+            int digit = argCcNumber.charAt(x) - '0'; // digit represents the original digit, at each iteration, that is being parsed from right to left
 
             if (isSkipped == true)  // as the iteration progresses, parsing the digits from right to left, skip a digit; skipping is toggled by the isSkipped = !isSkipped flag
                 digit = digit * 2;          // double the non-skipped digit
